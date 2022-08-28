@@ -23,6 +23,7 @@ plugins {
 }
 
 apply from: 'buildSystem/Libs.gradle'
+apply from: 'buildSystem/Modules.gradle'
 
 task clean(type: Delete) {
     delete rootProject.buildDir

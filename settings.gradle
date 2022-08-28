@@ -12,6 +12,9 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
+
+apply from: 'buildSystem/Modules.gradle'
+
 rootProject.name = "Apollo"
-include ':app'
-include ':product:presentation'
+include Modules.app
+include Modules.product_presentation
