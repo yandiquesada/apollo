@@ -1,5 +1,5 @@
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
 }
 
@@ -7,13 +7,11 @@ android {
     compileSdk rootProject.ext.compile_sdk_version
 
     defaultConfig {
-        applicationId "com.apollo"
         minSdk rootProject.ext.min_sdk_version
         targetSdk rootProject.ext.target_sdk_version
-        versionCode 1
-        versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
     }
 
     buildTypes {
@@ -32,14 +30,12 @@ android {
 }
 
 dependencies {
-    implementation project(":product:presentation")
 
-    implementation  Libs.androidx_core,
+    implementation Libs.androidx_core,
                     Libs.androidx_compact,
-                    Libs.android_material,
-                    Libs.androidx_constraintlayout
+                    Libs.android_material
 
     testImplementation Libs.junit
     androidTestImplementation Libs.junit_ext,
-                                Libs.espreso_core
+                            Libs.espreso_core
 }
