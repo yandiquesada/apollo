@@ -1,6 +1,7 @@
 ext {
     Modules = [
             app : "app",
-            product_presentation: ":product:presentation"
+            product_presentation: ":product:presentation",
+            product_domain: ":product:domain",
     ]
 }

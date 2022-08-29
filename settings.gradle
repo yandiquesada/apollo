@@ -18,3 +18,4 @@ apply from: 'buildSystem/Modules.gradle'
 rootProject.name = "Apollo"
 include Modules.app
 include Modules.product_presentation
+include ':product:domain'

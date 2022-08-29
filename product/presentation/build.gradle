@@ -36,10 +36,13 @@ android {
 }
 
 dependencies {
+    implementation project(Modules.product_domain)
 
     implementation Libs.androidx_core,
                     Libs.androidx_compact,
                     Libs.android_material
+
+    // TODO: extract this libs to the Libs.gradle
     implementation 'androidx.appcompat:appcompat:1.4.2'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.4.1'
