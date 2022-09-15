@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.RecyclerView
 import com.product.domain.models.Product
 import com.product.presentation.R
@@ -14,6 +16,9 @@ class ProductListAdapter(
     private val context: Context,
     private val productList: List<Product>
 ): RecyclerView.Adapter<ProductListAdapter.ProductItemViewHolder>() {
+
+    private var _onRowTap = MutableLiveData<Boolean>()
+    val onRowTap: MutableLiveData<Boolean> get() = _onRowTap
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductItemViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -35,16 +40,22 @@ class ProductListAdapter(
 
         private val title: TextView
         private val productNumber: TextView
+        private val productRowLayout: ConstraintLayout
 
         init {
             title = itemView.findViewById<TextView>(R.id.title)
             productNumber = itemView.findViewById<TextView>(R.id.product_number)
+            productRowLayout = itemView.findViewById<ConstraintLayout>(R.id.product_row)
         }
 
         fun bind() {
             val product = productList.get(adapterPosition)
             title.text = product.title
             productNumber.text = product.productNumber
+
+            productRowLayout.setOnClickListener {
+                _onRowTap.value = true
+            }
         }
 
     }

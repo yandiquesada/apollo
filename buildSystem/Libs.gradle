@@ -6,6 +6,8 @@ ext {
             androidx_constraintlayout: "androidx.constraintlayout:constraintlayout:2.1.4",
             junit: "junit:junit:4.13.2",
             junit_ext: "androidx.test.ext:junit:1.1.3",
-            espreso_core: "androidx.test.espresso:espresso-core:3.4.0"
+            espreso_core: "androidx.test.espresso:espresso-core:3.4.0",
+            life_cycle_live_data: "androidx.lifecycle:lifecycle-livedata-ktx:2.4.1",
+            life_cycle_view_model: "androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1"
     ]
 }

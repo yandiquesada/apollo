@@ -2,10 +2,12 @@ package com.product.presentation.list
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -21,6 +23,9 @@ class ProductListFragment : Fragment() {
     private lateinit var viewBinding: ProductListFragmentBinding
     private lateinit var productListRecyclerView: RecyclerView
     private lateinit var viewModel: ProductListViewModel
+
+    private var _onProductRowTap = MutableLiveData<Boolean>()
+    val onProductRowTap: MutableLiveData<Boolean> get() = _onProductRowTap
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -51,11 +56,16 @@ class ProductListFragment : Fragment() {
         )
         productListRecyclerView.addItemDecoration(dividerItemDecoration)
 
-        //TODO: create adapter, call recycler view .setAdapter!!
+
         context?.let {
             val adapter = ProductListAdapter(it, productList)
             productListRecyclerView.adapter = adapter
+
+            adapter.onRowTap.observe(viewLifecycleOwner) { onProductRowTap() }
         }
     }
 
+    private fun onProductRowTap() {
+        _onProductRowTap.value = true
+    }
 }

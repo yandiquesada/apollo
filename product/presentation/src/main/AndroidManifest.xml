@@ -5,7 +5,20 @@
     <application>
         <activity
             android:name=".list.ProductListActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:launchMode="singleTop">
+
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+
+                <data android:scheme="launch"/>
+                <data android:host="products"/>
+
+            </intent-filter>
+
+        </activity>
     </application>
 
 </manifest>

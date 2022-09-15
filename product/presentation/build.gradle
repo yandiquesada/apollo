@@ -42,12 +42,17 @@ dependencies {
                     Libs.androidx_compact,
                     Libs.android_material
 
-    // TODO: extract this libs to the Libs.gradle
-    implementation 'androidx.appcompat:appcompat:1.4.2'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.4.1'
-    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1'
-    implementation 'com.google.android.material:material:1.4.0'
+    implementation  Libs.androidx_core,
+            Libs.androidx_compact,
+            Libs.android_material,
+            Libs.androidx_constraintlayout
+
+    implementation  Libs.androidx_core,
+                    Libs.androidx_compact,
+                    Libs.android_material,
+                    Libs.androidx_constraintlayout,
+                    Libs.life_cycle_live_data,
+                    Libs.life_cycle_view_model
 
     testImplementation Libs.junit
     androidTestImplementation Libs.junit_ext,

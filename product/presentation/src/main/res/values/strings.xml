@@ -1,3 +1,4 @@
 <resources>
     <string name="product_item">Item:</string>
+    <string name="this_is_a_new_fragment">This is a new fragment</string>
 </resources>

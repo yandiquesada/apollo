@@ -2,6 +2,7 @@ package com.apollo
 
 import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.AttributeSet
@@ -26,7 +27,9 @@ class MainActivity : AppCompatActivity() {
 
     private fun setupViews() {
         buttonProductList.setOnClickListener {
-            val productListIntent = Intent(this, ProductListActivity::class.java)
+            // val productListIntent = Intent(this, ProductListActivity::class.java)
+            val productListIntent = Intent(Intent.ACTION_VIEW)
+            productListIntent.setData(Uri.parse("launch://products"))
             startActivity(productListIntent)
         }
     }
