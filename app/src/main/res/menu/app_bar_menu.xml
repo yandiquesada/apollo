@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!-- "Mark Favorite", should appear as action button if possible -->
+    <item
+        android:id="@+id/action_products"
+        android:icon="@drawable/baseline_home_black_24"
+        android:title="@string/products_menu"
+        app:showAsAction="ifRoom|withText"
+        />
+
+    <item
+        android:id="@+id/action_grade"
+        android:icon="@drawable/baseline_grade_black_24"
+        android:title="@string/star_menu"
+        app:showAsAction="ifRoom|withText"
+        />
+
+</menu>

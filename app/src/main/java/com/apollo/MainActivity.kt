@@ -6,6 +6,8 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.AttributeSet
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.widget.AppCompatButton
 import com.apollo.databinding.ActivityMainBinding
@@ -22,6 +24,8 @@ class MainActivity : AppCompatActivity() {
         buttonProductList = binding.productList
 
         setContentView(binding.root)
+
+        setSupportActionBar(binding.toolbar)
         setupViews()
     }
 
@@ -31,6 +35,22 @@ class MainActivity : AppCompatActivity() {
             val productListIntent = Intent(Intent.ACTION_VIEW)
             productListIntent.setData(Uri.parse("launch://products"))
             startActivity(productListIntent)
+        }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.app_bar_menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
+        R.id.action_products -> {
+            val productListIntent = Intent(this, ProductListActivity::class.java)
+            startActivity(productListIntent)
+            true
+        }
+        else -> {
+            super.onOptionsItemSelected(item)
         }
     }
 }
