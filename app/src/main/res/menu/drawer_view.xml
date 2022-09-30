@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/menu_item_products"
+            android:icon="@drawable/baseline_home_black_20"
+            android:title="Products" />
+        <item
+            android:id="@+id/nav_second_fragment"
+            android:icon="@drawable/baseline_swap_vertical_circle_black_24"
+            android:title="Sync" />
+    </group>
+</menu>

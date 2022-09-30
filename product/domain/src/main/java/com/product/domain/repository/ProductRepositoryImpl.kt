@@ -3,8 +3,8 @@ package com.product.domain.repository
 import com.product.domain.models.Product
 
 class ProductRepositoryImpl {
-    public fun getProducts(): List<Product> {
-        var productList = mutableListOf<Product>()
+     fun getProducts(): List<Product> {
+        val productList = mutableListOf<Product>()
 
         var product = Product(
             title = "Factory Authorized Parts™ - AZ2280-1A-24A Relay",
